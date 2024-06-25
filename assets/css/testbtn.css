@@ -1,0 +1,15 @@
+.test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+#testBtn {
+  margin: 0;
+  padding: 0;
+  border: solid;
+  max-width: fit-content;
+  font-size: 2rem;
+  padding: 0.5rem;
+}
