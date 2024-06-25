@@ -8,14 +8,24 @@
     --white: #ffffff;
 
 }
-
+/* Main Body */
 body {
     background-image: url("./images/backgroundImage.png");
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
 }
 
+.main-content {
+    position: relative;
+    background-color: #eee;
+    top: 0%;
+    left: 80px;
+    transition: all 0.5s ease;
+    width: calc(100% - 80px);
+    padding: 1rem;
+}
 
+/* Search Bar */
 .topnav {
     overflow: hidden;
     margin-top: 25%;
@@ -30,11 +40,13 @@ body {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    
 }
 
 .topnav a.active {
     
-    color: var(--white);
+    color: #eee;
+    
 
 }
 
@@ -46,6 +58,8 @@ body {
     border: 2px solid lightgray;
     margin: 0 auto;
     font-size: 17px;
+    outline: none;
+
 }
 
 /* Side toggle */
