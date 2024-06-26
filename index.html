@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Document</title>
 </head>
@@ -22,7 +22,7 @@
             <li>
                 <a href="#">
                     <i class="bx bxs-grid-alt"></i>
-                    <span class="nav-item">Dashboard</span>                    
+                    <span class="nav-item"> <a href="#search-engine"></a>Dashboard</span>                    
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
@@ -61,7 +61,7 @@
     
 
 <!-- SEARCH BAR -->
-        <div class="subheaderContainer">
+<div class="subheaderContainer" id="search-engine">
         <div class ="topnav">
             <a class="active" href="#search"></a>
             <input type="text" placeholder="Search">
@@ -87,7 +87,8 @@
     sidebar.classList.toggle('active')
     }
     </script>
-    <script src="assets/JavaScript/main.js"></script>
+    <script src="assets\JavaScript\main.js"></script>
+    <script src="assets/JavaScript/redditapisort.js"></script>
 
 </html>
 
