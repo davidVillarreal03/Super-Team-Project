@@ -4,7 +4,16 @@ const newBtn = document.querySelector("#new");
 
 const accessToken =
   "eyJhbGciOiJSUzI1NiIsImtpZCI6IlNIQTI1NjpzS3dsMnlsV0VtMjVmcXhwTU40cWY4MXE2OWFFdWFyMnpLMUdhVGxjdWNZIiwidHlwIjoiSldUIn0.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNzE5NDQ1MjYyLjAyNjMzLCJpYXQiOjE3MTkzNTg4NjIuMDI2MzMsImp0aSI6IjgxaXdHVzljbVIzaWpXTkhxNGNPNWc5VEZEc2lmZyIsImNpZCI6ImkxcXBoRnNmYS12TjExTGViY0w4SXciLCJsaWQiOiJ0Ml8xMzkyeWx5YTE2IiwiYWlkIjoidDJfMTM5MnlseWExNiIsImxjYSI6MTcxOTM1NTIyMDkxNiwic2NwIjoiZUp5S1Z0SlNpZ1VFQUFEX193TnpBU2MiLCJmbG8iOjl9.lMYYGf54YgB3y8xiM7ok9yqoFwZwQRYlMucbPwrGoaUmum5YwK5IAvNqzqSuKk8jvcmDsZ3BLxPv-By2f2fuX088rtQTF2nisn4qDFb14iHhfSuflkw1ZVaOnCe48x3RTDN4C2GLO1PGD5_sp-maEpD0_twnULM5XsGUvIfP7YCsEI9rcyaLfgpaBMGWty2aq9khlkoCgktf5sDM_v4aQuoEyD_cr9vP9b4Srbfnx6U1TLxxA4dGIIq439tgrqzthdk71wtOIQfTCDPWARQHJrWVLEHUXPB-77yoXSfBo8qLTPVEz3ECgMbWJdb4g4mCRVOS6_uQM0u9_0BOoUt9mA";
+
+function clearResults() {
+  const ResultsElement = document.getElementById("Results");
+  while (ResultsElement.firstChild) {
+    ResultsElement.removeChild(ResultsElement.firstChild);
+  }
+}
+
 function SortNewApi() {
+  clearResults();
   fetch("https://oauth.reddit.com/r/sanantonio/new.json?limit=10", {
     headers: {
       Authorization: `Bearer ${accessToken}`,
@@ -70,6 +79,7 @@ function SortNewApi() {
 }
 
 function SortTopApi() {
+  clearResults();
   fetch("https://oauth.reddit.com/r/sanantonio/top.json?limit=10", {
     headers: {
       Authorization: `Bearer ${accessToken}`,
@@ -135,6 +145,7 @@ function SortTopApi() {
 }
 
 function SortHotApi() {
+  clearResults();
   fetch("https://oauth.reddit.com/r/sanantonio/hot.json?limit=10", {
     headers: {
       Authorization: `Bearer ${accessToken}`,
