@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/RedditApiCSS"> -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>San Antonio Newztand</title>
 </head>
@@ -26,6 +27,8 @@
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
+            <!-- Add Navbar directions -->
+            <p>Here's what locals have been saying</p>
             <li id="top">
                 <a href="#">
                     <i class="bx bxs-arrow-to-top" id="top"></i>
@@ -46,6 +49,27 @@
                     <span class="nav-item">Hot</span>                    
                 </a>
                 <span class="tooltip">Hot</span>
+            </li>
+            <li id="food">
+                <a href="#">
+                    <i class="bx bxs-hot" id="food"></i>
+                    <span class="nav-item">Food</span>                    
+                </a>
+                <span class="tooltip">Food</span>
+            </li>
+            <li id="where">
+                <a href="#">
+                    <i class="bx bxs-hot" id="where"></i>
+                    <span class="nav-item">Where</span>                    
+                </a>
+                <span class="tooltip">Where</span>
+            </li>
+            <li id="visiting">
+                <a href="#">
+                    <i class="bx bxs-hot" id="visiting"></i>
+                    <span class="nav-item">Visiting</span>                    
+                </a>
+                <span class="tooltip">Visiting</span>
             </li>
             
         </ul>
@@ -69,15 +93,15 @@
             </div>
             </div>
         </div>
-        
+
 <!-- REDDITAPI RETURNS -->
-<div>
+<div class="RedditApiResults">
 <div id="Results"></div>
-<div id="CommentResults"></div>
+<div id="CommentResults" class="comment-results"></div>
 </div>
 
 
-    
+
 </body>
 <script>
     let btn = document.querySelector('#btn');
@@ -88,15 +112,6 @@
     }
     </script>
     <script src="assets\JavaScript\main.js"></script>
-    <script src="assets/JavaScript/redditapisort.js"></script>
+    <script src="assets/JavaScript/RedditApi.js"></script>
 
 </html>
-
-
-
-
-
-
-
-
-
