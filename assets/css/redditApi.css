@@ -1,0 +1,98 @@
+.RedditApiResults {
+  position: relative;
+  left: 80px;
+  transition: all 0.5s ease;
+  width: calc(100% - 80px);
+  padding: 1rem;
+  padding: 0 2rem;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #eee;
+  border: 2.5px solid #12171e;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  color: #272727;
+  text-align: center;
+  text-shadow: 1px 1px 4px #777;
+  padding-bottom: 1rem;
+  border-bottom: 2px dashed #272727;
+}
+
+.post-text {
+  padding: 0.5rem 0;
+  font-size: 1.35rem;
+  color: #3f3f3f;
+  text-align: center;
+  border-bottom: 2px dashed #272727;
+}
+
+.post-flair {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+  padding: 0.5rem 0;
+}
+
+.post-link {
+  text-align: center;
+  font-size: 1rem;
+  color: #007bff;
+  word-wrap: break-word;
+}
+
+.post-details {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.post-summary {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.comments-container {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-top: 1px solid #ccc;
+}
+
+.comment-container {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.comment-author {
+  text-align: center;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.comment-body {
+  text-align: center;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.details-summary::before {
+  content: "\25B6";
+  display: inline-block;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+details[open] .details-summary::before {
+  transform: rotate(90deg);
+}

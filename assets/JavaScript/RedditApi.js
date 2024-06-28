@@ -15,9 +15,9 @@ function clearResults() {
 
 function fetchPosts(sort, flairText) {
   clearResults();
-  let url = `https://oauth.reddit.com/r/sanantonio/${sort}.json?limit=100`;
+  let url = `https://oauth.reddit.com/r/sanantonio/${sort}.json?limit=50`;
   if (flairText) {
-    url = `https://oauth.reddit.com/r/sanantonio/search.json?q=flair_name:"${flairText}"&sort=${sort}&limit=100`;
+    url = `https://oauth.reddit.com/r/sanantonio/search.json?q=flair_name:"${flairText}"&sort=${sort}&limit=50`;
   }
   fetch(url, {
     headers: {
@@ -35,32 +35,56 @@ function fetchPosts(sort, flairText) {
       let count = 0;
       data.data.children.forEach((post) => {
         if (count >= 10) return;
-        const { title, link_flair_text, permalink, num_comments } = post.data;
+        const { title, selftext, link_flair_text, permalink, num_comments } =
+          post.data;
 
         if (!flairText || link_flair_text === flairText) {
           count++;
           const postContainer = document.createElement("div");
-          const titleElement = document.createElement("h1");
-          const link_flairElement = document.createElement("h2");
-          const permalinkElement = document.createElement("h3");
-          const num_commentsElement = document.createElement("h4");
+          postContainer.className = "post-container";
 
+          const titleElement = document.createElement("h1");
+          titleElement.className = "post-title";
           titleElement.textContent = title;
+          postContainer.appendChild(titleElement);
+
+          if (selftext) {
+            console.log("selftext:", selftext);
+            const selftextElement = document.createElement("h1");
+            selftextElement.className = "post-text";
+            selftextElement.textContent = selftext;
+            postContainer.appendChild(selftextElement);
+          } else {
+            console.log("selftext is empty or undefined for post:", post);
+          }
+
+          const link_flairElement = document.createElement("h2");
+          link_flairElement.className = "post-flair";
           link_flairElement.textContent = link_flair_text;
+          postContainer.appendChild(link_flairElement);
+
+          const permalinkElement = document.createElement("h3");
+          permalinkElement.className = "post-link";
           permalinkElement.textContent = permalink;
-          num_commentsElement.textContent = `Comments: ${num_comments}`;
+          postContainer.appendChild(permalinkElement);
 
           const detailsElement = document.createElement("details");
+          detailsElement.className = "post-details";
           const summaryElement = document.createElement("summary");
-          summaryElement.textContent = `Comments: ${num_comments}`;
-
+          summaryElement.className = "post-summary details-summary";
+          summaryElement.innerHTML = `Comments: ${num_comments}`;
           detailsElement.appendChild(summaryElement);
-          postContainer.appendChild(titleElement);
-          postContainer.appendChild(link_flairElement);
-          postContainer.appendChild(permalinkElement);
           postContainer.appendChild(detailsElement);
 
           ResultsElement.appendChild(postContainer);
+
+          detailsElement.addEventListener("toggle", (event) => {
+            if (event.target.open) {
+              summaryElement.classList.add("open");
+            } else {
+              summaryElement.classList.remove("open");
+            }
+          });
 
           fetchComments(permalink, detailsElement);
         }
@@ -86,6 +110,7 @@ function fetchComments(permalink, detailsElement) {
     .then((commentdata) => {
       console.log(commentdata);
       const commentsContainer = document.createElement("div");
+      commentsContainer.className = "comments-container";
 
       let commentCount = 0;
       commentdata[1].data.children.forEach((comment) => {
@@ -94,8 +119,11 @@ function fetchComments(permalink, detailsElement) {
         const { author, body } = comment.data;
 
         const CommentContainer = document.createElement("div");
+        CommentContainer.className = "comment-container";
         const authorElement = document.createElement("h1");
+        authorElement.className = "comment-author";
         const bodyElement = document.createElement("h2");
+        bodyElement.className = "comment-body";
 
         authorElement.textContent = author;
         bodyElement.textContent = body;
