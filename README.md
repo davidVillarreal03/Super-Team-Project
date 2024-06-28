@@ -1,12 +1,19 @@
 -Description
+
 An app that allows the user to see top comments about San Antonio from the Reddit API and then seach the search API
+
 -Motivation:
+
 Majority of the team was from San Antonio
 Fun and different ways to pick a local spot rather than just reading about specific places, this gives the user an oppotunity to choose what to read about
+
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
+
     This project is to show the attractions in San Antonio while utalizing the API's that the team found to be the most useful for this application. 
+
 - What problem does it solve?
     This allows user to find local attractions and restaurants near them that they might not be able to locate all in one page other wise.
+
 - What did you learn?
     We learned how to best utalize API's and which different API sources work best for certain projects. 
 ## Table of Contents (Optional)
