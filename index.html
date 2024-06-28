@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/RedditApiCSS"> -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <title>San Antonio Newztand</title>
 </head>
 <body>
     <!-- SIDE TOGGLE BAR -->
@@ -22,30 +24,53 @@
             <li>
                 <a href="#">
                     <i class="bx bxs-grid-alt"></i>
-                    <span class="nav-item">Dashboard</span>                    
+                    <span class="nav-item"> <a href="#search-engine"></a></span>                    
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
-            <li>
+            <!-- Add Navbar directions -->
+            <p>Here's what locals have been saying</p>
+            <li id="top">
                 <a href="#">
-                    <i class="bx bxs-arrow-to-top"></i>
+                    <i class="bx bxs-arrow-to-top" id="top"></i>
                     <span class="nav-item">Top</span>                    
                 </a>
                 <span class="tooltip">Top</span>
             </li>
-            <li>
+            <li id="new">
                 <a href="#">
-                    <i class="bx bxs-news"></i>
+                    <i class="bx bxs-news" id="new"></i>
                     <span class="nav-item">Newest</span>                    
                 </a>
                 <span class="tooltip">Newest</span>
             </li>
-            <li>
+            <li id="hot">
                 <a href="#">
-                    <i class="bx bxs-hot"></i>
+                    <i class="bx bxs-hot" id="hot"></i>
                     <span class="nav-item">Hot</span>                    
                 </a>
                 <span class="tooltip">Hot</span>
+            </li>
+            <li id="food">
+                <a href="#">
+                    <i class="bx bxs-hot" id="food"></i>
+                    <span class="nav-item">Food</span>                    
+                </a>
+                <span class="tooltip">Food</span>
+            </li>
+            <li id="where">
+                <a href="#">
+                    <i class="bx bxs-hot" id="where"></i>
+                    <span class="nav-item">Where</span>                    
+                </a>
+                <span class="tooltip">Where</span>
+            </li>
+            <li id="visiting">
+                <a href="#">
+                    <i class="bx bxs-hot" id="visiting"></i>
+                    <span class="nav-item">Visiting</span>                    
+                </a>
+                <span class="tooltip">Visiting</span>
             </li>
             
         </ul>
@@ -61,17 +86,23 @@
     
 
 <!-- SEARCH BAR -->
-        <div class="subheaderContainer">
+<div class="subheaderContainer" id="search-engine">
         <div class ="topnav">
             <a class="active" href="#search"></a>
-            <input type="text" placeholder="Search">
+            <input name="searchTxt" type="text" maxlength="512" placeholder="Enter A Destination" id="searchTxt"/>
                 
             </div>
             </div>
         </div>
-    
 
-    
+<!-- REDDITAPI RETURNS -->
+<div class="RedditApiResults">
+<div id="Results"></div>
+<div id="CommentResults" class="comment-results"></div>
+</div>
+
+
+
 </body>
 <script>
     let btn = document.querySelector('#btn');
@@ -81,14 +112,7 @@
     sidebar.classList.toggle('active')
     }
     </script>
+    <script src="assets\JavaScript\main.js"></script>
+    <script src="assets/JavaScript/RedditApi.js"></script>
 
 </html>
-
-
-
-
-
-
-
-
-
