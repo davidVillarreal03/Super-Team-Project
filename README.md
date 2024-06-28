@@ -1,4 +1,4 @@
-## Description
+-Description
 An app that allows the user to see top comments about San Antonio from the Reddit API and then seach the search API
 -Motivation:
 Majority of the team was from San Antonio
