@@ -48,7 +48,7 @@ Below is the option icon list provided on the left of the page containing the ne
 
 Credits 
 
-Reddit, Google Images,  https://www.reddit.com/dev/api/ David Villarreal, https://github.com/davidVillarreal03 Alexus Garza, https://github.com/agarza81, Gabrial Vasquez , Erica Schwarz https://github.com/ericameowzers,  
+Reddit, Google Images,  https://www.reddit.com/dev/api/ David Villarreal, https://github.com/davidVillarreal03 Alexus Garza, https://github.com/agarza81, Gabrial Vasquez https://github.com/Immorfalious, Erica Schwarz https://github.com/ericameowzers,  
 
 License 
 
