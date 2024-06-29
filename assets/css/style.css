@@ -71,7 +71,7 @@ body {
   background-color: #12171e;
   padding: 0.4rem 0.8rem;
   transition: all 0.5s ease;
-  z-index: 2;
+  z-index: 3;
 }
 
 .sidebar p {
@@ -159,11 +159,13 @@ body {
   line-height: 50px;
 }
 .sidebar ul li a {
+  position: relative;
   color: white;
   display: flex;
   align-items: center;
   text-decoration: none;
   border-radius: 0.8rem;
+  z-index: 3;
 }
 
 .sidebar ul li a:hover {
@@ -196,7 +198,7 @@ body {
   border-radius: 0.6rem;
   padding: 0.4rem 1.2rem;
   line-height: 1.8rem;
-  z-index: 20;
+  z-index: 2;
   opacity: 0;
   color: #eee;
 }
@@ -206,10 +208,4 @@ body {
 
 .sidebar ul li span {
   pointer-events: none;
-}
-
-.sidebar,
-.main-content,
-body {
-  overflow: visible;
 }
