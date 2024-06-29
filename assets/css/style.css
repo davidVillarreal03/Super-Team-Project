@@ -22,6 +22,7 @@ body {
   transition: all 0.5s ease;
   width: calc(100% - 80px);
   padding: 1rem;
+  z-index: 1;
 }
 
 /* Search Bar */
@@ -70,6 +71,7 @@ body {
   background-color: #12171e;
   padding: 0.4rem 0.8rem;
   transition: all 0.5s ease;
+  z-index: 2;
 }
 
 .sidebar p {
@@ -187,20 +189,27 @@ body {
 
 .sidebar ul li .tooltip {
   position: absolute;
-  left: 125px;
+  left: 110px;
   top: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0, 2);
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
   border-radius: 0.6rem;
   padding: 0.4rem 1.2rem;
   line-height: 1.8rem;
   z-index: 20;
   opacity: 0;
+  color: #eee;
 }
 .sidebar ul li:hover .tooltip {
   opacity: 1;
 }
 
-.sidebar.active ul li .tooltip {
-  display: none;
+.sidebar ul li span {
+  pointer-events: none;
+}
+
+.sidebar,
+.main-content,
+body {
+  overflow: visible;
 }
