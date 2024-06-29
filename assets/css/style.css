@@ -10,7 +10,6 @@
 /* Main Body */
 body {
   background-image: url("backgroundImage.png");
-  background-position: fixed;
   background-repeat: repeat;
   background-size: 100vw 100vh;
 }
@@ -23,12 +22,17 @@ body {
   transition: all 0.5s ease;
   width: calc(100% - 80px);
   padding: 1rem;
+  z-index: 1;
 }
 
 /* Search Bar */
 .topnav {
+  position: relative;
   overflow: hidden;
-  margin-top: 25%;
+  padding-left: 80px;
+  margin-top: 12%;
+  margin-bottom: 10%;
+  transition: all 0.5s ease;
 }
 
 .topnav a {
@@ -47,10 +51,11 @@ body {
 
 .topnav input[type="text"] {
   display: block;
+  text-align: center;
   width: 35%;
   padding: 6px;
   border-radius: 25px;
-  border: 2px solid lightgray;
+  border: 2px solid #12171e;
   margin: 0 auto;
   font-size: 17px;
   outline: none;
@@ -58,7 +63,7 @@ body {
 
 /* Side toggle */
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
@@ -66,11 +71,47 @@ body {
   background-color: #12171e;
   padding: 0.4rem 0.8rem;
   transition: all 0.5s ease;
+  z-index: 3;
 }
+
+.sidebar p {
+  display: none;
+}
+
+.sidebar a span {
+  display: none;
+}
+
+.sidebar.active p {
+  display: block;
+  color: #eee;
+  font-size: 0.8rem;
+  text-align: center;
+  border-top: 1px dotted #eee;
+  border-bottom: 1px dotted #eee;
+  padding-top: 1px;
+  padding-bottom: 3px;
+}
+
+.sidebar.active a span {
+  display: block;
+}
+
 .sidebar.active ~ .main-content {
   left: 250px;
   width: calc(100% -250px);
 }
+
+.sidebar.active ~ .RedditApiResults {
+  left: 250px;
+  padding-right: 12rem;
+}
+
+.sidebar.active ~ .topnav {
+  left: 80px;
+  transition: all 0.5s ease;
+}
+
 .sidebar.active {
   width: 250px;
 }
@@ -118,11 +159,13 @@ body {
   line-height: 50px;
 }
 .sidebar ul li a {
+  position: relative;
   color: white;
   display: flex;
   align-items: center;
   text-decoration: none;
   border-radius: 0.8rem;
+  z-index: 3;
 }
 
 .sidebar ul li a:hover {
@@ -148,20 +191,21 @@ body {
 
 .sidebar ul li .tooltip {
   position: absolute;
-  left: 125px;
+  left: 110px;
   top: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0, 2);
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
   border-radius: 0.6rem;
   padding: 0.4rem 1.2rem;
   line-height: 1.8rem;
-  z-index: 20;
+  z-index: 2;
   opacity: 0;
+  color: #eee;
 }
 .sidebar ul li:hover .tooltip {
   opacity: 1;
 }
 
-.sidebar.active ul li .tooltip {
-  display: none;
+.sidebar ul li span {
+  pointer-events: none;
 }

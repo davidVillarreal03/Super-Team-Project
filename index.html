@@ -1,127 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/RedditApiCSS"> -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/RedditApi.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
     <title>San Antonio Newztand</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- SIDE TOGGLE BAR -->
     <div class="sidebar">
-        <div class="top">
-            <div class="logo">
-                <i class='bx bx-info-circle'></i>
-                    <span>Newzstand</span>          
-            </div>
-            <i class='bx bx-menu' id="btn"></i>
+      <div class="top">
+        <div class="logo">
+          <i class="bx bx-info-circle"></i>
+          <span>Newzstand</span>
         </div>
-        <div class="user"></div>
-        <ul>
-            <li>
-                <a href="#">
-                    <i class="bx bxs-grid-alt"></i>
-                    <span class="nav-item"> <a href="#search-engine"></a></span>                    
-                </a>
-                <span class="tooltip">Dashboard</span>
-            </li>
-            <!-- Add Navbar directions -->
-            <p>Here's what locals have been saying</p>
-            <li id="top">
-                <a href="#">
-                    <i class="bx bxs-arrow-to-top" id="top"></i>
-                    <span class="nav-item">Top</span>                    
-                </a>
-                <span class="tooltip">Top</span>
-            </li>
-            <li id="new">
-                <a href="#">
-                    <i class="bx bxs-news" id="new"></i>
-                    <span class="nav-item">Newest</span>                    
-                </a>
-                <span class="tooltip">Newest</span>
-            </li>
-            <li id="hot">
-                <a href="#">
-                    <i class="bx bxs-hot" id="hot"></i>
-                    <span class="nav-item">Hot</span>                    
-                </a>
-                <span class="tooltip">Hot</span>
-            </li>
-            <li id="food">
-                <a href="#">
-                    <i class="bx bxs-bowl-rice" id="food"></i>
-                    <span class="nav-item">Food</span>                    
-                </a>
-                <span class="tooltip">Food</span>
-            </li>
-            <li id="where">
-                <a href="#">
-                    <i class="bx bxs-location-plus" id="where"></i>
-                    <span class="nav-item">Location</span>                    
-                </a>
-                <span class="tooltip">Location</span>
-            </li>
-            <li id="visiting">
-                <a href="#">
-                    <i class="bx bxs-hot" id="visiting"></i>
-                    <span class="nav-item">Visiting</span>                    
-                </a>
-                <span class="tooltip">Visiting</span>
-            </li>
-            
-        </ul>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <div class="user"></div>
+      <ul>
+        <li>
+          <a href="#">
+            <i class="bx bxs-grid-alt"></i>
+            <span class="nav-item">Dashboard<a href="#search-engine"></a></span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
+        <!-- Add Navbar directions -->
+        <p>Here's what locals have been saying</p>
+
+        <li id="top">
+          <a href="#">
+            <i class="bx bxs-arrow-to-top" id="top"></i>
+            <span class="nav-item">Top posts</span>
+          </a>
+          <span class="tooltip">Top</span>
+        </li>
+        <li id="new">
+          <a href="#">
+            <i class="bx bxs-news" id="new"></i>
+            <span class="nav-item">Currently Happening</span>
+          </a>
+          <span class="tooltip">Newest</span>
+        </li>
+        <li id="hot">
+          <a href="#">
+            <i class="bx bxs-hot" id="hot"></i>
+            <span class="nav-item">Trending</span>
+          </a>
+          <span class="tooltip">Hot</span>
+        </li>
+
+        <p>Get recommendations here!</p>
+
+        <li id="food">
+          <a href="#">
+            <i class="bx bxs-bowl-rice" id="food"></i>
+            <span class="nav-item">Places to eat</span>
+          </a>
+          <span class="tooltip">Food</span>
+        </li>
+        <li id="where">
+          <a href="#">
+            <i class="bx bxs-location-plus" id="where"></i>
+            <span class="nav-item">Places to visit</span>
+          </a>
+          <span class="tooltip">Location</span>
+        </li>
+        <li id="visiting">
+          <a href="#">
+            <i class="bx bxs-hot" id="visiting"></i>
+            <span class="nav-item">Tips for tourists</span>
+          </a>
+          <span class="tooltip">Visiting</span>
+        </li>
+      </ul>
+
     </div>
 
     <!-- MAIN BODY CONTENT -->
     <div class="main-content">
-        <div class="container">
-            <h1> San Antonio Newztand</h1>
-            <p><em>Comments from the locals</em></p>
-        </div>
+      <div class="container">
+        <h1>San Antonio Newztand</h1>
+        <p><em>Comments from the locals</em></p>
+      </div>
     </div>
-    
 
-<!-- SEARCH BAR -->
-<div class="subheaderContainer" id="search-engine">
-        <div class ="topnav">
-            <a class="active" href="#search"></a>
-            <input name="searchTxt" type="text" maxlength="512" placeholder="Enter A Destination" id="searchTxt"/>
-                
-            </div>
-            </div>
-        </div>
-    
-<!-- REDDITAPI RETURNS -->
-<div class="RedditApiResults">
-<div id="Results"></div>
-<div id="CommentResults" class="comment-results"></div>
-</div>
+    <!-- SEARCH BAR -->
+    <div class="topnav">
+      <a class="active" href="#search"></a>
+      <input
+        name="searchTxt"
+        type="text"
+        maxlength="512"
+        placeholder="Enter A Destination"
+        id="searchTxt"
+      />
+    </div>
 
+    <!-- REDDITAPI RETURNS -->
+    <div class="RedditApiResults">
+      <div id="Results"></div>
+      <div id="CommentResults" class="comment-results"></div>
+    </div>
+  </body>
+  <script>
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar");
 
-    
-</body>
-<script>
-    let btn = document.querySelector('#btn');
-    let sidebar = document.querySelector('.sidebar')
-    
     btn.onclick = function () {
-    sidebar.classList.toggle('active')
-    }
-    </script>
-    <script src="assets\JavaScript\main.js"></script>
-    <script src="assets/JavaScript/RedditApi.js"></script>
-
+      sidebar.classList.toggle("active");
+    };
+  </script>
+  <script src="assets\JavaScript\main.js"></script>
+  <script src="assets/JavaScript/RedditApi.js"></script>
 </html>
-
-
-
-
-
-
-
-
-
