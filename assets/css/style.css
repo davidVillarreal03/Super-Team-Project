@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+:root {
+  --white: #ffffff;
+}
+/* Main Body */
+body {
+  background-image: url("backgroundImage.png");
+  background-repeat: repeat;
+  background-size: 100vw 100vh;
+}
+
+.main-content {
+  position: relative;
+  background-color: #eee;
+  top: 0%;
+  left: 80px;
+  transition: all 0.5s ease;
+  width: calc(100% - 80px);
+  padding: 1rem;
+  z-index: 1;
+}
+
+/* Search Bar */
+.topnav {
+  position: relative;
+  overflow: hidden;
+  padding-left: 80px;
+  margin-top: 12%;
+  margin-bottom: 10%;
+  transition: all 0.5s ease;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a.active {
+  color: #eee;
+}
+
+.topnav input[type="text"] {
+  display: block;
+  text-align: center;
+  width: 35%;
+  padding: 6px;
+  border-radius: 25px;
+  border: 2px solid #12171e;
+  margin: 0 auto;
+  font-size: 17px;
+  outline: none;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 80px;
+  background-color: #12171e;
+  padding: 0.4rem 0.8rem;
+  transition: all 0.5s ease;
+  z-index: 3;
+}
+
+.sidebar p {
+  display: none;
+}
+
+.sidebar a span {
+  display: none;
+}
+
+.sidebar.active p {
+  display: block;
+  color: #eee;
+  font-size: 0.8rem;
+  text-align: center;
+  border-top: 1px dotted #eee;
+  border-bottom: 1px dotted #eee;
+  padding-top: 1px;
+  padding-bottom: 3px;
+}
+
+.sidebar.active a span {
+  display: block;
+}
+
+.sidebar.active ~ .main-content {
+  left: 250px;
+  width: calc(100% -250px);
+}
+
+.sidebar.active ~ .RedditApiResults {
+  left: 250px;
+  padding-right: 12rem;
+}
+
+.sidebar.active ~ .topnav {
+  left: 80px;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active {
+  width: 250px;
+}
+
+.sidebar #btn {
+  position: absolute;
+  color: white;
+  top: 0.4rem;
+  left: 50%;
+  font-size: 1.2rem;
+  line-height: 50px;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.sidebar.active #btn {
+  left: 90%;
+}
+
+.sidebar .top .logo {
+  color: white;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.sidebar.active .top .logo {
+  opacity: 1;
+}
+
+.top .lo i {
+  font-size: 2rem;
+  margin-right: 5px;
+}
+
+.sidebar ul li {
+  position: relative;
+  list-style-type: none;
+  height: 50px;
+  width: 90%;
+  margin: 0.8rem auto;
+  line-height: 50px;
+}
+.sidebar ul li a {
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0.8rem;
+  z-index: 3;
+}
+
+.sidebar ul li a:hover {
+  background-color: #ffffff;
+  color: #12171e;
+}
+
+.sidebar ul li a i {
+  min-width: 50px;
+  text-align: center;
+  height: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+}
+
+.sidebar .nav-item {
+  opacity: 0;
+}
+
+.sidebar.active .nav-item {
+  opacity: 1;
+}
+
+.sidebar ul li .tooltip {
+  position: absolute;
+  left: 110px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
+  border-radius: 0.6rem;
+  padding: 0.4rem 1.2rem;
+  line-height: 1.8rem;
+  z-index: 2;
+  opacity: 0;
+  color: #eee;
+}
+.sidebar ul li:hover .tooltip {
+  opacity: 1;
+}
+
+.sidebar ul li span {
+  pointer-events: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 4;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.blur-background {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  color: #12171e;
+  text-shadow: 1px 1px 3px #777;
+  text-align: center;
+  border-bottom: 2px dashed #12171e;
+  padding-bottom: 1rem;
+}
+
+.modal-content p {
+  padding-top: 1rem;
+  text-align: center;
+  line-height: 2rem;
+  color: #12171e;
+  text-shadow: 1px 1px 4px #777;
+}
