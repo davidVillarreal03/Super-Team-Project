@@ -17,7 +17,7 @@
   </head>
   <body>
     <!-- SIDE TOGGLE BAR -->
-    <div class="sidebar">
+    <nav class="sidebar">
       <div class="top">
         <div class="logo">
           <i class="bx bx-info-circle"></i>
@@ -83,15 +83,15 @@
           <span class="tooltip">Visiting</span>
         </li>
       </ul>
-    </div>
+    </nav>
 
     <!-- MAIN BODY CONTENT -->
-    <div class="main-content">
+    <header class="main-content">
       <div class="container">
         <h1>San Antonio Newztand</h1>
         <p><em>Comments from the locals</em></p>
       </div>
-    </div>
+    </header>
 
     <!-- SEARCH BAR -->
     <div class="topnav">
@@ -106,10 +106,10 @@
     </div>
 
     <!-- REDDITAPI RETURNS -->
-    <div class="RedditApiResults">
+    <section class="RedditApiResults">
       <div id="Results"></div>
       <div id="CommentResults" class="comment-results"></div>
-    </div>
+    </section>
 
     <div id="modalPopup" class="modal">
       <div class="modal-content">
@@ -124,14 +124,7 @@
       </div>
     </div>
   </body>
-  <script>
-    let btn = document.querySelector("#btn");
-    let sidebar = document.querySelector(".sidebar");
 
-    btn.onclick = function () {
-      sidebar.classList.toggle("active");
-    };
-  </script>
   <script src="assets\JavaScript\main.js"></script>
   <script src="assets/JavaScript/RedditApi.js"></script>
 </html>

@@ -1,3 +1,10 @@
+let btn = document.querySelector("#btn");
+let sidebar = document.querySelector(".sidebar");
+
+btn.onclick = function () {
+  sidebar.classList.toggle("active");
+};
+
 const searchEngineToken =
   "e934cda8f6237c759907bcb8e9cc46807ad714b154fc2b897c91d074de54c347";
 window.onkeyup = keyup;
