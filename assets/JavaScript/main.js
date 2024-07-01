@@ -1,18 +1,3 @@
-const historyBtnt = document.querySelector("#history");
-const historyt = document.getElementById("searchTxt").value;
-
-function saveHistoryToStorage(history) {
-  const historyStorage = history.value;
-  localStorage.setItem("history", JSON.stringify(historyStorage));
-}
-
-function UserHistory() {
-  let read = JSON.parse(localStorage.getItem("history"));
-  console.log(read);
-}
-
-// historyBtnt.addEventListener("click", UserHistory);
-
 const searchEngineToken =
   "e934cda8f6237c759907bcb8e9cc46807ad714b154fc2b897c91d074de54c347";
 window.onkeyup = keyup;
@@ -45,3 +30,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  readHistory();
+});
+
+const searchTxt = document.getElementById("searchTxt");
+searchTxt.addEventListener("input", function () {
+  saveHistory();
+});
+
+function saveHistory() {
+  const history = searchTxt.value;
+  localStorage.setItem("history", JSON.stringify(history));
+}
+
+function readHistory() {
+  let read = localStorage.getItem("history");
+  if (read) {
+    const history = JSON.parse(read);
+    console.log(history);
+    document.getElementById("output").innerText = history;
+    searchTxt.value = history;
+  } else {
+    console.log("No history found.");
+  }
+}
