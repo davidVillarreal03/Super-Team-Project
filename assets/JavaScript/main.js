@@ -24,3 +24,24 @@ function keyup(e) {
     window.location = `https://serpapi.com/search.html?q=${replaced}&location=San+Antonio,+Texas,+United+States&hl=en&gl=us&google_domain=google.com&api_key=${searchEngineToken}`;
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  var modal = document.getElementById("modalPopup");
+  var span = document.getElementsByClassName("close")[0];
+  var mainContent = document.querySelector(".main-content");
+
+  modal.style.display = "block";
+  mainContent.classList.add("blur-background");
+
+  span.onclick = function () {
+    modal.style.display = "none";
+    mainContent.classList.remove("blur-background");
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      mainContent.classList.remove("blur-background");
+    }
+  };
+});

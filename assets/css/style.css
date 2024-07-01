@@ -61,7 +61,6 @@ body {
   outline: none;
 }
 
-/* Side toggle */
 .sidebar {
   position: fixed;
   top: 0;
@@ -208,4 +207,61 @@ body {
 
 .sidebar ul li span {
   pointer-events: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 4;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.blur-background {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  color: #12171e;
+  text-shadow: 1px 1px 3px #777;
+  text-align: center;
+  border-bottom: 2px dashed #12171e;
+  padding-bottom: 1rem;
+}
+
+.modal-content p {
+  padding-top: 1rem;
+  text-align: center;
+  line-height: 2rem;
+  color: #12171e;
+  text-shadow: 1px 1px 4px #777;
 }
